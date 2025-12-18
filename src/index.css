@@ -5,7 +5,7 @@
 :root {
   --color-bg: #20232a;
   --color-bg-secondary: #1a1e23;
-  --color-text: #ffffff;
+  --color-text-white: #ffffff;
 }
 @layer base {
   @media (prefers-reduced-motion: no-preference) {
