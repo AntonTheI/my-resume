@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@tailwind utilities;
+
+:root {
+  --color-bg: #20232a;
+  --color-bg-secondary: #1a1e23;
+  --color-text: #ffffff;
+}
+@layer base {
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      @apply scroll-smooth;
+    }
+  }
+
+  body {
+    @apply min-h-screen;
+    line-height: 1.5;
+  }
+}
