@@ -1,6 +1,6 @@
-import AppBar from "./AppBar/AppBar";
+import AppBar from "./appBar/AppBar";
 import Footer from "./Footer";
-import Sidebar from "./Sidebar";
+import Sidebar from "./sidebar/Sidebar";
 
 import React from "react";
 

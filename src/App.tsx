@@ -1,5 +1,5 @@
 import "./index.css";
-import Layout from "./components/Layout/Layout";
+import Layout from "./components/layout/Layout";
 import About from "./components/sections/About";
 import Contact from "./components/sections/Contact";
 import Experience from "./components/sections/Experience";
