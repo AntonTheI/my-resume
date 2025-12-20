@@ -1,8 +1,10 @@
+import SearchBar from "../../ui/SearchBar";
+
 const AppBarCenter = () => {
   return (
     <>
       <div className="flex flex-1 justify-center items-center">
-        AppBarCenter
+        <SearchBar placeholder="Give me a JOB" />
       </div>
     </>
   );
