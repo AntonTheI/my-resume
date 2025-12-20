@@ -1,8 +1,7 @@
-import React from "react";
 import WindowControl from "./WindowControl";
 const AppBarLeft = () => {
   return (
-    <div className="flex flex-1 p-3">
+    <div className="flex flex-1 p-1">
       <WindowControl />
     </div>
   );

@@ -3,7 +3,7 @@ import SidebarFolders from "./SidebarFolders";
 
 const Sidebar = () => {
   return (
-    <div className="bg-(--color-bg)">
+    <div className="bg-(--color-bg) ">
       <SidebarControls />
       <SidebarFolders />
     </div>
