@@ -14,7 +14,7 @@ const Layout = ({ children }: LayoutProps) => {
       <AppBar></AppBar>
       <div className="flex flex-1 border-x border-black divide-x divide-black">
         <Sidebar></Sidebar>
-        <main className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 bg-(--color-bg-secondary) ">
+        <main className="flex flex-1 flex-col overflow-auto bg-(--color-bg-secondary) ">
           {children}
         </main>
       </div>
