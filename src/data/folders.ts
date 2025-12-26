@@ -116,39 +116,95 @@ export const test1 = {
   },
 };
 
-const fileSystem = {
-  folderName: "src",
-  children: {
-    utils: {
-      folderName: "utils",
-      children: {
-        helper: { fileName: "helper.js" },
-      },
-    },
-  },
-};
+// const fileSystem = {
+//   folderName: "src",
+//   children: {
+//     utils: {
+//       folderName: "utils",
+//       children: {
+//         helper: { fileName: "helper.js" },
+//       },
+//     },
+//   },
+// };
 
-const findPath = (file, target, currentPath) => {
-  // **Check if current object is the target**
-  if ((file.folderName || file.fileName) === target) {
-    // If match: build full path
-    const path = [...currentPath, file.folderName || file.fileName];
-    // return it
-    return path;
-  }
-  // **If not found, check if object has children**
-  if (!file.children) return null;
+// const findPath = (file, target, currentPath) => {
+//   // **Check if current object is the target**
+//   if ((file.folderName || file.fileName) === target) {
+//     // If match: build full path
+//     const path = [...currentPath, file.folderName || file.fileName];
+//     // return it
+//     return path;
+//   }
+//   // **If not found, check if object has children**
+//   if (!file.children) return null;
 
-  //**If has children, loop through them**
-  for (const [key, value] of Object.entries(file.children)) {
-    // Create new path (add current folder name to currentPath)
-    const newPath = [...currentPath, file.folderName || file.fileName];
-    const recursive = findPath(value, target, newPath);
-    if (recursive) return recursive;
-  }
+//   //**If has children, loop through them**
+//   for (const [key, value] of Object.entries(file.children)) {
+//     // Create new path (add current folder name to currentPath)
+//     const newPath = [...currentPath, file.folderName || file.fileName];
+//     const recursive = findPath(value, target, newPath);
+//     if (recursive) return recursive;
+//   }
 
-  return null;
-};
+//   return null;
+// };
 
-// Should return: 'src/utils/helper.js'
-console.log("fuck yo - ", findPath(fileSystem, "utils", []));
+// // Should return: 'src/utils/helper.js'
+// console.log("fuck yo - ", findPath(fileSystem, "utils", []));
+
+// const findPath = (object, target, currentPath) => {
+//   const name = object.folderName || object.fileName;
+
+//   if (name === target) {
+//     const path = [...currentPath, name];
+//     return path;
+//   }
+
+//   if (!object.children) return null;
+
+//   const newPath = [...currentPath, name];
+
+//   for (const value of Object.values(object.children)) {
+//     const recursivePath = findPath(value, target, newPath);
+//     if (recursivePath) return recursivePath;
+//   }
+
+//   return null;
+// };
+
+// const findFilePath = (object, target, currentPath) => {
+//   const name = object.folderName || object.fileName;
+
+//   if (name === target) return [...currentPath, name];
+
+//   if (!object.children) return null;
+
+//   const newPath = [...currentPath, name]
+
+//   for(const value of Object.values(object.children)){
+//     const recursivFunction = findFilePath(value,target,newPath)
+
+//     if(recursivFunction) return recursivFunction
+//   }
+
+//   return null
+// };
+
+// const findPath = ((obj, target, currentPath = []) => {
+//       const name = obj.folderName || obj.fileName
+//       const newPath = [...currentPath, name]
+
+//       if(name === target) return newPath
+
+//       if(!obj.children) return null
+
+//       for(const value of Object.values(obj.children)){
+
+//         const recursion = findPath(value, target, newPath)
+
+//         if(recursion) return recursion
+//       }
+
+//       return null
+//     })
