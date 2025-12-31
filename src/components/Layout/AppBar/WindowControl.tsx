@@ -1,4 +1,3 @@
-import React from "react";
 import WindowControlButton from "../../ui/WindowControlButton";
 
 const WindowControl = () => {
