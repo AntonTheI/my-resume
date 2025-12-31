@@ -4,15 +4,26 @@ type FileTabProps = {
   tabs: FileNode[];
   onFileClose: (file: FileNode) => void;
   onFileSelect: (file: FileNode) => void;
+  currentFile: FileNode;
 };
 
-const FileTab = ({ tabs, onFileClose, onFileSelect }: FileTabProps) => {
+const FileTab = ({
+  tabs,
+  onFileClose,
+  onFileSelect,
+  currentFile,
+}: FileTabProps) => {
   return (
     <div className="flex flex-row cursor-pointer">
       {tabs.map((file) => {
+        const isOpen = currentFile.fileName === file.fileName;
         return (
           <div
-            className="flex items-center px-2 border-black border group"
+            className={`flex items-center px-2 border-black border-r group border-b bg-(--color-bg) ${
+              isOpen
+                ? "border-b-0 border-t border-t-amber-700 bg-(--color-bg-secondary)"
+                : ""
+            }`}
             key={file.fileName}
             onClick={() => {
               onFileSelect(file);

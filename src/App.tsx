@@ -34,6 +34,7 @@ function App() {
           tabs={fileTabs}
           onFileClose={handleFileClose}
           onFileSelect={handleFileSelect}
+          currentFile={currentFile}
         />
 
         <FilePath target={currentFile} folders={folders[0]} />
