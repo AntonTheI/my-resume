@@ -2,10 +2,7 @@ import { folders } from "../../../data/folders";
 import FolderView from "../../../utils/FolderView";
 import type { OnFileSelect } from "../../../types/editor";
 
-interface SidebarFoldersProps {
-  onFileSelect: OnFileSelect;
-}
-const SideBarFolders = ({ onFileSelect }: SidebarFoldersProps) => {
+const SideBarFolders = ({ onFileSelect }: { onFileSelect: OnFileSelect }) => {
   return (
     <div className="p-1">
       {folders.map((folder) => (

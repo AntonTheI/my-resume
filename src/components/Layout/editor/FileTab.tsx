@@ -8,9 +8,12 @@ const FileTab = ({ tabs }: { tabs: string[] }) => {
             key={name}
           >
             {name}
-            <div className="ml-1 px-1 items-center opacity-0 group-hover:opacity-100 hover:bg-white/10 ">
+            <button
+              className="cursor-pointer ml-1 px-1 items-center opacity-0 group-hover:opacity-100 hover:bg-white/10 "
+              aria-label="close"
+            >
               x
-            </div>
+            </button>
           </div>
         );
       })}
