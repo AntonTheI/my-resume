@@ -12,21 +12,21 @@ function App() {
   const [currentFolder, setCurrentFolder] = useState<FileNode>(defaultPage);
   const [fileTabs, setFileTabs] = useState<string[]>([defaultPage.fileName]);
 
-  const tabIsOper = fileTabs.includes(currentFolder.fileName);
-
   const handleFileSelect = (file: FileNode) => {
-    console.log(tabIsOper);
-    // if (fileTabs.includes(currentFolder.fileName)) return;
     setCurrentFolder(file);
     setFileTabs((prev) =>
       prev.includes(file.fileName) ? prev : [...prev, file.fileName]
     );
   };
 
+  const handleFileClose = (fileName: string) => {
+    setFileTabs((prev) => prev.filter((tab) => tab !== fileName));
+  };
+
   return (
     <Layout sidebar={<Sidebar onFileSelect={handleFileSelect} />}>
       <div className="text-(--color-text-grey)">
-        <FileTab tabs={fileTabs} />
+        <FileTab tabs={fileTabs} onFileClose={handleFileClose} />
 
         <FilePath target={currentFolder} folders={folders[0]} />
         <Editor content={currentFolder} />

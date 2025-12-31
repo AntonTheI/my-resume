@@ -1,4 +1,9 @@
-const FileTab = ({ tabs }: { tabs: string[] }) => {
+type FileTabProps = {
+  tabs: string[];
+  onFileClose: (fileName: string) => void;
+};
+
+const FileTab = ({ tabs, onFileClose }: FileTabProps) => {
   return (
     <div className="flex flex-row cursor-pointer  ">
       {tabs.map((name) => {
@@ -11,6 +16,7 @@ const FileTab = ({ tabs }: { tabs: string[] }) => {
             <button
               className="cursor-pointer ml-1 px-1 items-center opacity-0 group-hover:opacity-100 hover:bg-white/10 "
               aria-label="close"
+              onClick={() => onFileClose(name)}
             >
               x
             </button>
